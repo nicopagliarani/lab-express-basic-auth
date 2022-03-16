@@ -56,7 +56,13 @@ router.post("/login", async (req,res,next)=>{
   }
 });
 router.get("/userProfile", (req, res, next) => {
-  res.render("userProfile");
+  consolep
+  if(req.session.currentUser) {
+    
+    res.render("userProfile");
+    return 
+  }
+  res.redirect("/login")
 });
 
 
